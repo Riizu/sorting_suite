@@ -1,17 +1,20 @@
 class BubbleSort
-  def intitalize
-    @previous
-    @current
-  end
 
-  def swap(array_to_swap)
-    return nil if array_to_swap.nil?
-    return nil if array_to_swap.length < 2 || array_to_swap.length > 2
+  def sort(array)
+    swap_counter = 0
 
-    if array_to_swap[0] > array_to_swap[1]
-      return [array_to_swap[1],array_to_swap[0]]
-    else
-      return array_to_swap
+    while(swap_counter >= 0)
+
+      (array.length - 1).times do |current|
+        if array[current] > array[current+1]
+          array[current], array[current+1] = array[current+1], array[current]
+          swap_counter += 1
+        else
+          swap_counter -= 1
+        end
+      end
     end
+    array
   end
+
 end
