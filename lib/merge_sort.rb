@@ -1,24 +1,26 @@
 class MergeSort
+
   def sort(array)
-    #recursively split the left side and sort at lowest
-    left_array = split_left(array)
-    #recursively split the right side and merge at lowest
-    right_array = split_right(array)
-    #merge both halves
-    merge(left_array, right_array)
-
-    return array
+    if array.length <= 1
+      array
+    else
+      mid = ((array.length) / 2).floor
+      left = sort(array[0..mid - 1])
+      right = sort(array[mid..array.length])
+      merge(left, right)
+    end
   end
 
-  def split_left(array)
-
+  def merge(left, right)
+    if left.empty?
+      right
+    elsif right.empty?
+      left
+    elsif left.first < right.first
+      [left.first] + merge(left[1..left.length], right)
+    else
+      [right.first] + merge(left, right[1..right.length])
+    end
   end
 
-  def split_right(array)
-
-  end
-
-  def merge(left_array, right_array)
-
-  end
 end
