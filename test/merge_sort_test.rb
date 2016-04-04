@@ -26,6 +26,14 @@ class MergeSortTest < Minitest::Test
     assert_equal [0,1], sub_problem
   end
 
+  def test_merge_sort_sorted
+    sorter = MergeSort.new
+
+    sorted_array = sorter.sort(["a", "b", "c", "d"])
+
+    assert_equal ["a","b","c","d"], sorted_array
+  end
+
   def test_merge_sort_expected
     sorter = MergeSort.new
 
