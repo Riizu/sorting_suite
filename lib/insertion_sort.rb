@@ -24,6 +24,17 @@ module SortingSuite
       return sorted_array
     end
 
+    def inplace_sort(array)
+      (1..(array.length - 1)).each do |index|
+        (0..(index - 1)).each do |current_value|
+          if array[current_value] >= array[index]
+            array.insert(current_value, array[index])
+            array.delete_at(index + 1)
+          end
+        end
+      end
 
+      return array
+    end
   end
 end

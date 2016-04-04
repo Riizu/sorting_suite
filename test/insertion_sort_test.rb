@@ -57,4 +57,14 @@ class InsertionSortTest < Minitest::Test
 
     assert_equal ["a","b","c"], sorted
   end
+
+  def test_insertion_inplace_sort
+    sorter = SortingSuite::InsertionSort.new
+
+    array = [4, 0, 2, 3, 1]
+    sorted = sorter.inplace_sort(array)
+
+    assert_equal [0, 1, 2, 3, 4], sorted
+    assert_equal sorted.object_id, array.object_id
+  end
 end
