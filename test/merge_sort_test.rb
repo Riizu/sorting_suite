@@ -27,7 +27,6 @@ class MergeSortTest < Minitest::Test
   end
 
   def test_merge_sort_expected
-
     sorter = MergeSort.new
 
     sorted = sorter.sort(["d", "b", "a", "c"])
@@ -36,11 +35,18 @@ class MergeSortTest < Minitest::Test
   end
 
   def test_merge_sort_worst_case
-    
     sorter = MergeSort.new
 
     sorted = sorter.sort(["d", "c", "b", "a"])
 
     assert_equal ["a", "b", "c", "d"], sorted
+  end
+
+  def test_merge_sort_odd_length
+    sorter = MergeSort.new
+
+    sorted = sorter.sort(["a","c","b"])
+
+    assert_equal ["a","b","c"], sorted
   end
 end
