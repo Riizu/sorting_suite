@@ -58,12 +58,14 @@ class InsertionSortTest < Minitest::Test
   end
 
   def test_insertion_inplace_sort
-    sorter = SortingSuite::InsertionSort.new
-
     array = [4, 0, 2, 3, 1]
-    sorted = sorter.inplace_sort(array)
 
-    assert_equal [0, 1, 2, 3, 4], sorted
-    assert_equal sorted.object_id, array.object_id
+    first_sorted = SortingSuite::InsertionSort.new([3, 2, 1]).inplace_sort
+    second_sorted = SortingSuite::InsertionSort.new(array).inplace_sort
+    matches = SortingSuite::InsertionSort.new(array).inplace_sort.object_id == array.object_id
+
+    assert_equal [1, 2, 3], first_sorted
+    assert_equal [0, 1, 2, 3, 4], second_sorted
+    assert matches
   end
 end

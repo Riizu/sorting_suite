@@ -6,7 +6,7 @@ require './lib/sorting_suite'
 class BenchmarkTest < MiniTest::Test
   def test_benchmark_exists
     benchmark = SortingSuite::Benchmark.new
-
+    
     assert benchmark
   end
 

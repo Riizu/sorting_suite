@@ -1,5 +1,8 @@
 module SortingSuite
   class InsertionSort
+    def initialize(array=nil)
+      @array = array
+    end
 
     def sort(array)
       sorted_array = [array.shift]
@@ -23,16 +26,16 @@ module SortingSuite
       return sorted_array
     end
 
-    def inplace_sort(array)
-      (1..(array.length - 1)).each do |index|
+    def inplace_sort
+      (1..(@array.length - 1)).each do |index|
         (0..(index - 1)).each do |current_value|
-          if array[current_value] >= array[index]
-            array.insert(current_value, array[index])
-            array.delete_at(index + 1)
+          if @array[current_value] >= @array[index]
+            @array.insert(current_value, @array[index])
+            @array.delete_at(index + 1)
           end
         end
       end
-      return array
+      return @array
     end
 
   end
