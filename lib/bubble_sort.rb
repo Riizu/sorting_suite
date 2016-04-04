@@ -1,26 +1,23 @@
 class BubbleSort
 
   def sort(array)
-    if array.length <= 1
-      array
-    else
-      swap_counter = 0
-      while(swap_counter >= 0)
-        (array.length - 1).times do |current|
-          if array[current] > array[current+1]
-            swap(array, current, current+1)
-            swap_counter += 1
-          else
-            swap_counter -= 1
-          end
+    return array if array.length <= 1
+
+    swapped = true
+    while swapped
+      swapped = false
+      (array.length - 2).times do |current|
+        if array[current] > array[current+1]
+          swap(array, current, current+1)
+          swapped = true
         end
       end
-      array
     end
-  end
+    array
+end
 
-  def swap(array,current, next_value)
-    array[current], array[next_value] = array[next_value], array[current]
-  end
+def swap(array,current, next_value)
+  array[current], array[next_value] = array[next_value], array[current]
+end
 
 end
