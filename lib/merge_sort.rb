@@ -2,14 +2,12 @@ module SortingSuite
   class MergeSort
 
     def sort(array)
-      if array.length <= 1
-        array
-      else
-        mid = ((array.length) / 2).floor
-        left = sort(array[0..mid - 1])
-        right = sort(array[mid..array.length])
-        merge(left, right)
-      end
+      return array if array.length <= 1
+
+      mid = ((array.length) / 2).floor
+      left = sort(array[0..mid - 1])
+      right = sort(array[mid..array.length])
+      merge(left, right)
     end
 
     def merge(left, right)

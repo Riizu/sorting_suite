@@ -1,7 +1,7 @@
 module SortingSuite
   class Benchmark
 
-    def time(sorting_type, array=[3,3,4,5,1])
+    def time(sorting_type, array=[3, 3, 4, 5, 1])
       sorter = sorting_type.new
       t1 = Time.now.to_f * 1000
       result = sorter.sort(array)
@@ -19,11 +19,11 @@ module SortingSuite
 
     def return_correct_result (sorting_type, t1, t2)
       if sorting_type == SortingSuite::BubbleSort
-        "BubbleSort took #{(t2-t1).round(6)} seconds."
+        "BubbleSort took #{(t2 - t1).round(6)} seconds."
       elsif sorting_type == SortingSuite::InsertionSort
-        "InsertionSort took #{(t2-t1).round(6)} seconds."
+        "InsertionSort took #{(t2 - t1).round(6)} seconds."
       elsif sorting_type == SortingSuite::MergeSort
-        "MergeSort took #{(t2-t1).round(6)} seconds."
+        "MergeSort took #{(t2 - t1).round(6)} seconds."
       end
     end
 

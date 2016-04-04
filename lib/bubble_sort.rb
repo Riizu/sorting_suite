@@ -8,8 +8,8 @@ module SortingSuite
       while swapped
         swapped = false
         (array.length - 1).times do |current|
-          if array[current] > array[current+1]
-            swap(array, current, current+1)
+          if array[current] > array[current + 1]
+            swap(array, current, current + 1)
             swapped = true
           end
         end
@@ -17,7 +17,7 @@ module SortingSuite
       array
     end
 
-    def swap(array,current, next_value)
+    def swap(array, current, next_value)
       array[current], array[next_value] = array[next_value], array[current]
     end
 

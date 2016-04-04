@@ -21,9 +21,9 @@ class MergeSortTest < Minitest::Test
   def test_merge_sort_sub_problem
     sorter = SortingSuite::MergeSort.new
 
-    sub_problem = sorter.sort([1,0])
+    sub_problem = sorter.sort([1, 0])
 
-    assert_equal [0,1], sub_problem
+    assert_equal [0, 1], sub_problem
   end
 
   def test_merge_sort_sorted
@@ -31,7 +31,7 @@ class MergeSortTest < Minitest::Test
 
     sorted_array = sorter.sort(["a", "b", "c", "d"])
 
-    assert_equal ["a","b","c","d"], sorted_array
+    assert_equal ["a", "b", "c", "d"], sorted_array
   end
 
   def test_merge_sort_expected
@@ -53,8 +53,8 @@ class MergeSortTest < Minitest::Test
   def test_merge_sort_odd_length
     sorter = SortingSuite::MergeSort.new
 
-    sorted = sorter.sort(["a","c","b"])
+    sorted = sorter.sort(["a", "c", "b"])
 
-    assert_equal ["a","b","c"], sorted
+    assert_equal ["a", "b", "c"], sorted
   end
 end

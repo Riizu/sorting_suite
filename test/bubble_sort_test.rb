@@ -1,8 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require 'pry'
 require './lib/sorting_suite'
-
 
 class BubbleSortTest < Minitest::Test
   def test_bubble_sort_exists
@@ -22,9 +20,9 @@ class BubbleSortTest < Minitest::Test
   def test_bubble_sort_sub_problem
     sorter = SortingSuite::BubbleSort.new
 
-    sub_problem = sorter.sort([1,0])
+    sub_problem = sorter.sort([1, 0])
 
-    assert_equal [0,1], sub_problem
+    assert_equal [0, 1], sub_problem
   end
 
   def test_bubble_sort_sorted
@@ -32,7 +30,7 @@ class BubbleSortTest < Minitest::Test
 
     sorted_array = sorter.sort(["a", "b", "c", "d"])
 
-    assert_equal ["a","b","c","d"], sorted_array
+    assert_equal ["a", "b", "c", "d"], sorted_array
   end
 
   def test_bubble_sort_expected
@@ -54,8 +52,8 @@ class BubbleSortTest < Minitest::Test
   def test_bubble_sort_odd_length
     sorter = SortingSuite::BubbleSort.new
 
-    sorted = sorter.sort(["a","c","b"])
+    sorted = sorter.sort(["a", "c", "b"])
 
-    assert_equal ["a","b","c"], sorted
+    assert_equal ["a", "b", "c"], sorted
   end
 end

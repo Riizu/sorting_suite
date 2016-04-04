@@ -1,5 +1,4 @@
 module SortingSuite
-
   class InsertionSort
 
     def sort(array)
@@ -7,12 +6,12 @@ module SortingSuite
 
       while !array.empty?
         value_to_sort = array.shift
-        sorted_array = insert_value(value_to_sort,sorted_array)
+        sorted_array = insert_value(value_to_sort, sorted_array)
       end
       sorted_array
     end
 
-    def insert_value(value_to_sort,sorted_array)
+    def insert_value(value_to_sort, sorted_array)
       sorted_array.length.times do |i|
         if value_to_sort < sorted_array[i]
           sorted_array.insert(i, value_to_sort)
@@ -35,6 +34,6 @@ module SortingSuite
       end
       return array
     end
-    
+
   end
 end

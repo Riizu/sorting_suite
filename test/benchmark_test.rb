@@ -13,9 +13,9 @@ class BenchmarkTest < MiniTest::Test
   def test_benchmark_time
     benchmark = SortingSuite::Benchmark.new
 
-    bubble = benchmark.time(SortingSuite::BubbleSort, [3,3,4,5,1])
-    insert = benchmark.time(SortingSuite::InsertionSort, [3,3,4,5,1])
-    merge = benchmark.time(SortingSuite::MergeSort, [3,3,4,5,1])
+    bubble = benchmark.time(SortingSuite::BubbleSort, [3, 3, 4, 5, 1])
+    insert = benchmark.time(SortingSuite::InsertionSort, [3, 3, 4, 5, 1])
+    merge = benchmark.time(SortingSuite::MergeSort, [3, 3, 4, 5, 1])
 
     assert bubble
     assert insert
@@ -42,7 +42,7 @@ class BenchmarkTest < MiniTest::Test
     benchmark = SortingSuite::Benchmark.new
 
     slowest = benchmark.slowest([1, 2, 3, 4, 5])
-    
+
     assert slowest
   end
 end
