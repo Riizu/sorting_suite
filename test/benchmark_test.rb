@@ -13,8 +13,12 @@ class BenchmarkTest < MiniTest::Test
   def test_benchmark_time
     benchmark = SortingSuite::Benchmark.new
 
-    result = benchmark.time(SortingSuite::InsertionSort, [3,3,4,5,1])
+    bubble = benchmark.time(SortingSuite::BubbleSort, [3,3,4,5,1])
+    insert = benchmark.time(SortingSuite::InsertionSort, [3,3,4,5,1])
+    merge = benchmark.time(SortingSuite::MergeSort, [3,3,4,5,1])
 
-    assert_equal "InsertionSort took 0.004333 seconds", result
+    assert bubble
+    assert insert
+    assert merge
   end
 end
