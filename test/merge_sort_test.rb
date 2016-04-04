@@ -1,17 +1,17 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require 'pry'
-require './lib/merge_sort'
+require './lib/sorting_suite'
 
 class MergeSortTest < Minitest::Test
   def test_merge_sort_exists
-    sorter = MergeSort.new
+    sorter = SortingSuite::MergeSort.new
 
     assert sorter
   end
 
   def test_merge_sort_base_case
-    sorter = MergeSort.new
+    sorter = SortingSuite::MergeSort.new
 
     base_case = sorter.sort([1])
 
@@ -19,7 +19,7 @@ class MergeSortTest < Minitest::Test
   end
 
   def test_merge_sort_sub_problem
-    sorter = MergeSort.new
+    sorter = SortingSuite::MergeSort.new
 
     sub_problem = sorter.sort([1,0])
 
@@ -27,7 +27,7 @@ class MergeSortTest < Minitest::Test
   end
 
   def test_merge_sort_sorted
-    sorter = MergeSort.new
+    sorter = SortingSuite::MergeSort.new
 
     sorted_array = sorter.sort(["a", "b", "c", "d"])
 
@@ -35,7 +35,7 @@ class MergeSortTest < Minitest::Test
   end
 
   def test_merge_sort_expected
-    sorter = MergeSort.new
+    sorter = SortingSuite::MergeSort.new
 
     sorted = sorter.sort(["d", "b", "a", "c"])
 
@@ -43,7 +43,7 @@ class MergeSortTest < Minitest::Test
   end
 
   def test_merge_sort_worst_case
-    sorter = MergeSort.new
+    sorter = SortingSuite::MergeSort.new
 
     sorted = sorter.sort(["d", "c", "b", "a"])
 
@@ -51,7 +51,7 @@ class MergeSortTest < Minitest::Test
   end
 
   def test_merge_sort_odd_length
-    sorter = MergeSort.new
+    sorter = SortingSuite::MergeSort.new
 
     sorted = sorter.sort(["a","c","b"])
 

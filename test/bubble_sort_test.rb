@@ -1,18 +1,18 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require 'pry'
-require './lib/bubble_sort'
+require './lib/sorting_suite'
 
 
 class BubbleSortTest < Minitest::Test
   def test_bubble_sort_exists
-    sorter = BubbleSort.new
+    sorter = SortingSuite::BubbleSort.new
 
     assert sorter
   end
 
   def test_bubble_sort_base_case
-    sorter = BubbleSort.new
+    sorter = SortingSuite::BubbleSort.new
 
     base_case = sorter.sort([1])
 
@@ -20,7 +20,7 @@ class BubbleSortTest < Minitest::Test
   end
 
   def test_bubble_sort_sub_problem
-    sorter = BubbleSort.new
+    sorter = SortingSuite::BubbleSort.new
 
     sub_problem = sorter.sort([1,0])
 
@@ -28,7 +28,7 @@ class BubbleSortTest < Minitest::Test
   end
 
   def test_bubble_sort_sorted
-    sorter = BubbleSort.new
+    sorter = SortingSuite::BubbleSort.new
 
     sorted_array = sorter.sort(["a", "b", "c", "d"])
 
@@ -36,7 +36,7 @@ class BubbleSortTest < Minitest::Test
   end
 
   def test_bubble_sort_expected
-    sorter = BubbleSort.new
+    sorter = SortingSuite::BubbleSort.new
 
     sorted_array = sorter.sort(["d", "b", "a", "c"])
 
@@ -44,7 +44,7 @@ class BubbleSortTest < Minitest::Test
   end
 
   def test_bubble_sort_worst_case
-    sorter = BubbleSort.new
+    sorter = SortingSuite::BubbleSort.new
 
     sorted = sorter.sort(["d", "c", "b", "a"])
 
@@ -52,7 +52,7 @@ class BubbleSortTest < Minitest::Test
   end
 
   def test_bubble_sort_odd_length
-    sorter = BubbleSort.new
+    sorter = SortingSuite::BubbleSort.new
 
     sorted = sorter.sort(["a","c","b"])
 

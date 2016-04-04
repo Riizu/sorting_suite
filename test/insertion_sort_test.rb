@@ -1,17 +1,17 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require 'pry'
-require './lib/insertion_sort'
+require './lib/sorting_suite'
 
 class InsertionSortTest < Minitest::Test
   def test_insertion_sort_exists
-    sorter = InsertionSort.new
+    sorter = SortingSuite::InsertionSort.new
 
     assert sorter
   end
 
   def test_insertion_sort_base_case
-    sorter = InsertionSort.new
+    sorter = SortingSuite::InsertionSort.new
 
     base_case = sorter.sort([1])
 
@@ -19,7 +19,7 @@ class InsertionSortTest < Minitest::Test
   end
 
   def test_insertion_sort_sub_problem
-    sorter = InsertionSort.new
+    sorter = SortingSuite::InsertionSort.new
 
     sub_problem = sorter.sort([1,0])
 
@@ -27,7 +27,7 @@ class InsertionSortTest < Minitest::Test
   end
 
   def test_insertion_sort_expected
-    sorter = InsertionSort.new
+    sorter = SortingSuite::InsertionSort.new
 
     sorted = sorter.sort(["d", "b", "a", "c"])
 
@@ -35,7 +35,7 @@ class InsertionSortTest < Minitest::Test
   end
 
   def test_insertion_sort_sorted
-    sorter = InsertionSort.new
+    sorter = SortingSuite::InsertionSort.new
 
     sorted_array = sorter.sort(["a", "b", "c", "d"])
 
@@ -43,7 +43,7 @@ class InsertionSortTest < Minitest::Test
   end
 
   def test_insertion_sort_worst_case
-    sorter = InsertionSort.new
+    sorter = SortingSuite::InsertionSort.new
 
     sorted = sorter.sort(["d", "c", "b", "a"])
 
@@ -51,7 +51,7 @@ class InsertionSortTest < Minitest::Test
   end
 
   def test_insertion_sort_odd_length
-    sorter = InsertionSort.new
+    sorter = SortingSuite::InsertionSort.new
 
     sorted = sorter.sort(["a","c","b"])
 
