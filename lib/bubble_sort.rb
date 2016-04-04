@@ -1,6 +1,9 @@
 class BubbleSort
 
   def sort(array)
+    if array.length <= 1
+      return array
+    end
     swap_counter = 0
 
     while(swap_counter >= 0)
