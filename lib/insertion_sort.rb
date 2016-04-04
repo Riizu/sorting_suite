@@ -33,8 +33,8 @@ module SortingSuite
           end
         end
       end
-
       return array
     end
+    
   end
 end
